@@ -21,7 +21,6 @@ class Events_Calendar_Display {
     public function __construct(){   
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
         add_shortcode('mycalendar', array($this, 'display_calendar'));
-        include( 'json-events.php');
 
 
     }
@@ -51,6 +50,20 @@ class Events_Calendar_Display {
     }
 
     function display_calendar(){
+      global $post;
+      $args = array( 
+           'post_type' => 'post', 
+           'post_status' => 'publish', 
+           'nopaging' => true,
+     );
+      $posts = get_posts($args);
+      $output = array();
+      foreach( $posts as $post ) {  
+     $post_date = get_the_date('Y-m-d');
+           // Pluck the id and title attributes
+       $output[] = array( 'id' => $post->ID, 'title' => $post->post_title, 'start' => $post_date, 'end' => $post_date );
+       
+     } 
    ?>
 <html>
     <head>
