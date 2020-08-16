@@ -76,7 +76,7 @@ $(document).ready(function() {
    // editable: true,
 
     
-    events: '/wp-content/plugins/fullcalendar-event/json-events.php',
+   events: <?php echo json_encode( $output );?>,
     eventDrop: function(event, delta) {
       alert(event.title + ' was moved ' + delta + ' days\n' +
         '(should probably update your database)');
