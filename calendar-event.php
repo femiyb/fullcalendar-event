@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit();
 }
 
-class Devllo_Events_Calendar_Display {
+class Events_Calendar_Display {
     public function __construct(){   
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
         add_shortcode('mycalendar', array($this, 'display_calendar'));
@@ -109,4 +109,4 @@ $(document).ready(function() {
 }  
 
 }
-new Devllo_Events_Calendar_Display();
+new Events_Calendar_Display();
