@@ -22,18 +22,6 @@ global $post;
 
 	
 
-	//print_r($json);
-
-	//$input_arrays = json_decode($json, true);
-
-    
-	//$output_arrays = array($input_arrays);
-	//echo json_encode($output_arrays);
-	//echo $json;
-
-
-
-
 	////////////////////////////////////////////////////////////
 	// THIS WORKS IF YOU COMMEMNT OUT THE REST OF THE CODE ABOVE
 /*
